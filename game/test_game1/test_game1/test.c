@@ -13,11 +13,9 @@ void game()
 	char show[ROWS][COLS] = { 0 };
 	Initboard(mine, ROWS, COLS,'0');//初始化隐藏棋盘
 	Initboard(show, ROWS, COLS, '*');//初始化可视棋盘
-	//Displayboard(mine, ROW, COL);
 	Setmine(mine, ROW, COL);//布置雷
-	//Displayboard(mine, ROW, COL);
-	Displayboard(show, ROW, COL);
-	Findmine(mine, show, ROW, COL);
+	Displayboard(show, ROW, COL);//打印可视棋盘
+	Findmine(mine, show, ROW, COL);//排查雷，判断，最后出结果
 }
 int main() {
 	srand((unsigned int)time(NULL));

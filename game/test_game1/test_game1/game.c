@@ -53,16 +53,32 @@ void Setmine(char mine[ROWS][COLS], int row, int col)
 	}
 }
 //统计雷的个数
+//int Total(char mine[ROWS][COLS], int x, int y)
+//{
+//	return mine[x - 1][y - 1]
+//		+ mine[x - 1][y]
+//		+ mine[x - 1][y + 1]
+//		+ mine[x][y - 1]
+//		+ mine[x][y + 1]
+//		+ mine[x + 1][y - 1]
+//		+ mine[x + 1][y]
+//		+ mine[x + 1][y + 1]- 8 * '0';
+//}
+
 int Total(char mine[ROWS][COLS], int x, int y)
 {
-	return mine[x - 1][y - 1]
-		+ mine[x - 1][y]
-		+ mine[x - 1][y + 1]
-		+ mine[x][y - 1]
-		+ mine[x][y + 1]
-		+ mine[x + 1][y - 1]
-		+ mine[x + 1][y]
-		+ mine[x + 1][y + 1]- 8 * '0';
+	int sum = 0;
+	for (int i = -1; i <= 1; i++)
+	{
+		for (int j = -1; j <= 1; j++)
+		{
+			if (mine[x + i][y + j] == '1')
+			{
+				sum++;
+			}
+		}
+	}
+	return sum;
 }
 //排查雷
 void Findmine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
