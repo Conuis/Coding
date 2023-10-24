@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 #define ROW 6
 #define COL 6
 void Initboard(char board[ROW][COL], int row, int col);

@@ -44,7 +44,6 @@ void Displayboard(char board[ROW][COL], int row, int col)
 
 void Playerboard(char board[ROW][COL], int row, int col)
 {
-
 	int a;
 	int b;
 	while (1)
@@ -99,6 +98,7 @@ int Fullboard(char board[ROW][COL], int row, int col)
 	}
 	return 1;
 }
+//ÅÐ¶ÏÆå×Ó
 char Determineboard(char board[ROW][COL], int row, int col)
 {
 	//·µ»ØC -- ¼ÌÐø
