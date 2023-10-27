@@ -145,11 +145,13 @@ char Determineboard(char board[ROW][COL], int row, int col)
 	{
 		for (j = 0; j < row; j++)
 		{
-			if (board[i][j] == board[i + 1][j + 1] && board[i + 1][j + 1] == board[i + 2][j + 2] && board[i][j] != ' ')
+			if (i < col - 2 && j < row - 2)
 			{
-				return board[i][j];
+				if (board[i][j] == board[i + 1][j + 1] && board[i + 1][j + 1] == board[i + 2][j + 2] && board[i][j] != ' ')
+				{
+					return board[i][j];
+				}
 			}
-
 		}
 		/*if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ')
 		{
@@ -161,13 +163,15 @@ char Determineboard(char board[ROW][COL], int row, int col)
 	{
 		for (j = 0; j < row; j++)
 		{
-			if (board[i][j] == board[i - 1][j - 1] && board[i - 1][j - 1] == board[i - 2][j - 2] && board[i][j] != ' ')
+			if (i < col - 2 && j > row - 2)
 			{
-				return board[i][j];
+				if (board[i][j] == board[i + 1][j - 1] && board[i + 1][j - 1] == board[i + 2][j - 2] && board[i][j] != ' ')
+				{
+					return board[i][j];
+				}
 			}
-
 		}
-		/*	if (board[0][2] == board[1][1] && board[1][1] == board[2][1] && board[1][1] != ' ')
+		/*	if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[1][1] != ' ')
 			{
 				return board[1][1];
 			}*/

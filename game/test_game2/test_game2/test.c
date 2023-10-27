@@ -42,7 +42,7 @@ void game()
 	}
 	else
 	{
-		printf("平局！");
+		printf("平局！\n");
 	}
 
 }
